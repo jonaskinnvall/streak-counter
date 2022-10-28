@@ -16,4 +16,19 @@ describe('streakCounter', () => {
 		expect(streak.hasOwnProperty('lastLoginDate')).toBe(true)
 		expect(streak.hasOwnProperty('startDate')).toBe(true)
 	})
+
+	it('should return a streak starting at 1 and keep track of lastLoginDate', () => {
+		const date = new Date()
+		const streak = streakCounter(mockLocalStorage, date)
+
+		function formattedDate(date: Date): string {
+			// return date without timestamp
+			return date.toLocaleDateString('en-US')
+		}
+
+		const dateFormatted = formattedDate(date)
+
+		expect(streak.currentCount).toBe(1)
+		expect(streak.lastLoginDate).toBe(dateFormatted)
+	})
 })
