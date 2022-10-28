@@ -1,0 +1,26 @@
+{
+  "name": "streak-counter",
+  "version": "1.0.0",
+  "description": "Basic streak counter app",
+  "main": "index.js",
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonaskinnvall/streak-counter.git"
+  },
+  "keywords": [
+    "streak",
+    "counter"
+  ],
+  "author": "Jonas Kinnvall (jonaskinnvall)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonaskinnvall/streak-counter/issues"
+  },
+  "homepage": "https://github.com/jonaskinnvall/streak-counter#readme"
+}
