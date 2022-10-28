@@ -9,6 +9,10 @@ describe('streakCounter', () => {
 		mockLocalStorage = mockJSDom.window.localStorage
 	})
 
+	afterEach(() => {
+		mockLocalStorage.clear()
+	})
+
 	it('should return a streak object with currentCount, lastLoginDate and startDate', () => {
 		const date = new Date()
 		const streak = streakCounter(mockLocalStorage, date)
