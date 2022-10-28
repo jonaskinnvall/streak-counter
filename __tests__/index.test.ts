@@ -1,5 +1,6 @@
 import { JSDOM } from 'jsdom'
 import { streakCounter } from '../src'
+import { formattedDate } from '../src/utils'
 
 describe('streakCounter', () => {
 	let mockLocalStorage: Storage
@@ -20,11 +21,6 @@ describe('streakCounter', () => {
 	it('should return a streak starting at 1 and keep track of lastLoginDate', () => {
 		const date = new Date()
 		const streak = streakCounter(mockLocalStorage, date)
-
-		function formattedDate(date: Date): string {
-			// return date without timestamp
-			return date.toLocaleDateString('en-US')
-		}
 
 		const dateFormatted = formattedDate(date)
 
