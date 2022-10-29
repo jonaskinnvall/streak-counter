@@ -8,3 +8,12 @@ export function formattedDate(date: Date): string {
 	// return date without timestamp
 	return date.toLocaleDateString('en-US')
 }
+
+export function buildStreak(date: Date, overrideDefaults?: Partial<Streak>) {
+	const defaultStreak = {
+		currentCount: 1,
+		startDate: formattedDate(date),
+		lastLoginDate: formattedDate(date),
+	}
+	return { ...defaultStreak, ...overrideDefaults }
+}
