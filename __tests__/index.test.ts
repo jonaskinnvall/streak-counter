@@ -62,7 +62,7 @@ describe('streakCounter', () => {
 		})
 
 		it('should return the streak from localStorage', () => {
-			const date = new Date()
+			const date = new Date('10/20/2022')
 			const streak = streakCounter(mockLocalStorage, date)
 
 			expect(streak.startDate).toBe('10/20/2022')
