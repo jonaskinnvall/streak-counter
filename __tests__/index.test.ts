@@ -93,5 +93,17 @@ describe('streakCounter', () => {
 
 			expect(streak.currentCount).toBe(2)
 		})
+
+		it('should reset if not consecutive', () => {
+			const date = new Date('10/21/2022')
+			const streak = streakCounter(mockLocalStorage, date)
+
+			expect(streak.currentCount).toBe(2)
+
+			const dateUpdated = new Date('10/23/2022')
+			const streakUpdated = streakCounter(mockLocalStorage, dateUpdated)
+
+			expect(streakUpdated.currentCount).toBe(1)
+		})
 	})
 })
