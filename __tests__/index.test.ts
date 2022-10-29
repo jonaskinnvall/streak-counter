@@ -50,7 +50,7 @@ describe('streakCounter', () => {
 
 			const date = new Date('10/20/2022')
 			const streak = {
-				currentStreak: 1,
+				currentCount: 1,
 				startDate: formattedDate(date),
 				lastLoginDate: formattedDate(date),
 			}
@@ -66,6 +66,12 @@ describe('streakCounter', () => {
 			const streak = streakCounter(mockLocalStorage, date)
 
 			expect(streak.startDate).toBe('10/20/2022')
+		})
+
+		it('should increment the streak', () => {
+			const date = new Date('10/21/2022')
+			const streak = streakCounter(mockLocalStorage, date)
+			expect(streak.currentCount).toBe(2)
 		})
 	})
 })
