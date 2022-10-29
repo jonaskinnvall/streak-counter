@@ -11,9 +11,12 @@ const KEY = 'streak'
 function shouldIncrementOrResetStreakCount(
 	currentDate: Date,
 	lastLoginDate: string,
-): 'increment' | 'reset' {
+): 'increment' | 'reset' | 'none' {
 	const difference =
 		currentDate.getDate() - parseInt(lastLoginDate.split('/')[1])
+	if (difference === 0) {
+		return 'none'
+	}
 	if (difference === 1) {
 		return 'increment'
 	}
