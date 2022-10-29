@@ -1,3 +1,5 @@
+export const KEY = 'streak'
+
 export interface Streak {
 	currentCount: number
 	lastLoginDate: string
@@ -16,4 +18,8 @@ export function buildStreak(date: Date, overrideDefaults?: Partial<Streak>) {
 		lastLoginDate: formattedDate(date),
 	}
 	return { ...defaultStreak, ...overrideDefaults }
+}
+
+export function updateStreak(storage: Storage, streak: Streak) {
+	storage.setItem(KEY, JSON.stringify(streak))
 }

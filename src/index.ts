@@ -1,6 +1,4 @@
-import { buildStreak, formattedDate, Streak } from './utils'
-
-const KEY = 'streak'
+import { buildStreak, formattedDate, KEY, Streak, updateStreak } from './utils'
 
 function shouldIncrementOrResetStreakCount(
 	currentDate: Date,
@@ -36,13 +34,13 @@ export function streakCounter(storage: Storage, date: Date): Streak {
 					lastLoginDate: formattedDate(date),
 				})
 
-				storage.setItem(KEY, JSON.stringify(updatedStreak))
+				updateStreak(storage, updatedStreak)
 				return updatedStreak
 			}
 			if (SHOULD_RESET) {
 				const updatedStreak = buildStreak(date)
 
-				storage.setItem(KEY, JSON.stringify(updatedStreak))
+				updateStreak(storage, updatedStreak)
 				return updatedStreak
 			}
 			return streak
