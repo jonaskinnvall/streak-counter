@@ -1,10 +1,4 @@
-import { formattedDate } from './utils'
-
-interface Streak {
-	currentCount: number
-	lastLoginDate: string
-	startDate: string
-}
+import { formattedDate, Streak } from './utils'
 
 const KEY = 'streak'
 
