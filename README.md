@@ -12,6 +12,8 @@ yarn add @jonaskinnvall/streak-counter
 
 ## Usage
 
+[![Edit streak-counter (ts-course) (forked)](https://codesandbox.io/static/img/play-codesandbox.svg)][def]
+
 ```js
 import { streakCounter } from '@jonaskinnvall/streak-counter'
 
@@ -24,3 +26,6 @@ const streak = streakCounter(localstorage, today)
 //   startDate:'28/10/2022'
 // }
 ```
+
+[def]:
+ https://codesandbox.io/s/streak-counter-ts-course-forked-9efhdy?fontsize=14&hidenavigation=1&theme=dark
